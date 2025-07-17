@@ -44,7 +44,7 @@ void main() {
   String originalText = "HELLO WORLD";
   int shift = 3;
 
-  String encryptedText = CaesarCipher.encrypt(originalText, shift);
+  String encryptedText = CaesarCipher.encrypt(originalText, shift: shift); // Using named parameter 'shift'
   print('Encrypted: $encryptedText'); // Output: Encrypted: KHOOR ZRUOG
 
   String decryptedText = CaesarCipher.decrypt(encryptedText, shift);
@@ -56,13 +56,15 @@ void main() {
 
 ```dart
 void main() {
-  // Generate sequence up to a limit
-  List<int> fibSequence = Fibonacci.generateSequence(10);
-  print('Fibonacci sequence up to 10: $fibSequence'); // Output: Fibonacci sequence up to 10: [0, 1, 1, 2, 3, 5, 8]
+  // Generate sequence up to a count of terms
+  List<BigInt> fibSequence = Fibonacci.generateSequence(10);
+  print('Fibonacci sequence up to 10 terms: $fibSequence'); // Output: Fibonacci sequence up to 10 terms: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
-  // Get nth Fibonacci number
-  int fib5 = Fibonacci.getNth(5);
-  print('5th Fibonacci number: $fib5'); // Output: 5th Fibonacci number: 5
+  // Check if a number is a Fibonacci number
+  BigInt fibNumber = BigInt.from(5);
+  print('$fibNumber is a Fibonacci number? ${Fibonacci.isFibonacci(fibNumber)}');
+  BigInt nonFibNumber = BigInt.from(6);
+  print('$nonFibNumber is a Fibonacci number? ${Fibonacci.isFibonacci(nonFibNumber)}');
 }
 ```
 
@@ -75,9 +77,8 @@ void main() {
   int num1 = 121;
   int num2 = 123;
 
-  print('"$word1" is palindrome? ${Palindrome.isPalindromeString(word1)}'); // Output: "madam" is palindrome? true
-  print('"$word2" is palindrome? ${Palindrome.isPalindromeString(word2)}'); // Output: "hello" is palindrome? false
-  print('$num1 is palindrome? ${Palindrome.isPalindromeNumber(num1)}'); // Output: 121 is palindrome? true
+  print('"$word1" is palindrome (string)? ${Palindrome.isPalindromeString(word1)}');
+  print('"$word2" is palindrome (string)? ${Palindrome.isPalindromeString(word2)}');
 }
 ```
 
@@ -86,11 +87,11 @@ void main() {
 ```dart
 void main() {
   // Check if a number is prime
-  print('7 is prime? ${PrimeNumber.confirm(7)}'); // Output: 7 is prime? true
-  print('10 is prime? ${PrimeNumber.confirm(10)}'); // Output: 10 is prime? false
+  print('7 is prime? ${PrimeNumber.isPrime(7)}');
+  print('10 is prime? ${PrimeNumber.isPrime(10)}');
 
   // Generate prime sequence
-  List<int> primes = PrimeNumber.generate(30);
+  List<int> primes = PrimeNumber.generatePrimes(30); // Renamed generate to generatePrimes
   print('Primes up to 30: $primes'); // Output: Primes up to 30: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 }
 ```
@@ -99,7 +100,7 @@ Roman Numeral Conversion
 ```dart
 void main() {
   // Decimal to Roman
-  String roman58 = RomanConversion.toRoman(58);
+  String roman58 = RomanConversion.toRomanNumeral(58);
   print('58 in Roman: $roman58'); // Output: 58 in Roman: LVIII
 
   // Roman to Decimal
