@@ -2,7 +2,7 @@
 ///
 /// This class provides static methods to perform common temperature conversions
 /// based on standard formulas.
-class TemperatureConverter {
+class TemperatureConversion {
   /// Converts a temperature from Celsius to Fahrenheit.
   ///
   /// Formula: F = C * 1.8 + 32
