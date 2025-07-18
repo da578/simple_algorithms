@@ -1,7 +1,7 @@
 name: simple_algorithms
 description: A collection of simple and common algorithms implemented in Dart.
 version: 0.0.1
-repository: https://github.com/my_org/my_repo
+repository: https://github.com/da578/simple_algorithms
 
 environment:
   sdk: ^3.8.1
